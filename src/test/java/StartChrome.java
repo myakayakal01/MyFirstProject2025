@@ -1,6 +1,9 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.safari.SafariDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
@@ -13,8 +16,12 @@ public class StartChrome {
     public void verifyLoginSuccess() throws InterruptedException {
 
         driver = new ChromeDriver(); //Start Browser
-        driver.manage().window().maximize();
-        driver.get("https://www.saucedemo.com/");
+        //driver = new FirefoxDriver(); Start FireFox browser
+        //driver = new SafariDriver(); Start Safari browser
+        //driver = new EdgeDriver(); Start Edge browser
+
+        driver.manage().window().maximize(); //maximize browser
+        driver.get("https://www.saucedemo.com/"); //Open URL
         driver.findElement(By.id("user-name")).sendKeys("standard_user");
         Thread.sleep(1000);
         driver.findElement(By.id("password")).sendKeys("secret_sauce");
