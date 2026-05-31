@@ -27,4 +27,9 @@ public class ExtentReportManager {
          return extentReports;
 
      }
+
+    public static ExtentReports extentSetup() {
+
+        return new ExtentReports();
+    }
 }
